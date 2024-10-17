@@ -1,0 +1,111 @@
+@import url("https://fonts.googleapis.com/css2?family=Fredoka:wght@300..700&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* HEADER.PHP */
+
+header {
+  background-color: #f3f6fd;
+  font-family: "Fredoka";
+  font-weight: 600;
+  gap: 25px;
+  width: 100vw;
+  padding: 25px 50px;
+}
+
+.classicMenu {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 30px;
+}
+
+header h1 {
+  font-size: 1.5em;
+}
+
+header .menu {
+  display: flex;
+  flex-direction: row-reverse;
+  justify-content: space-between;
+  align-items: center;
+  width: 50vw;
+  list-style-type: none;
+  font-size: 1.2em;
+  margin-left: auto;
+  margin-right: 0;
+}
+
+header a {
+  display: block;
+  color: #000000;
+  text-decoration: none;
+}
+
+header button {
+  border: none;
+  background-color: transparent;
+  font-size: 1em;
+}
+
+.wrappable {
+  font-size: 1em;
+}
+
+.menuProfile {
+  margin: auto;
+  margin-bottom: 0px;
+}
+
+#menuParent {
+  display: none;
+  position: relative;
+  width: 100%;
+  height: calc(100vh - 50px);
+  margin: 0;
+  background-color: #f3f6fd;
+}
+
+#menu {
+  width: 100%;
+}
+
+#boxMenuDeroulant {
+  margin-bottom: 40px;
+}
+
+#menuParent ul li {
+  list-style-type: none;
+  font-size: 1.5rem;
+  padding: 5px 0px;
+}
+
+.openMenu {
+  display: flex;
+  flex-direction: row-reverse;
+}
+
+/* STYLE_LOGIN.PHP */
+
+p {
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+@media screen and (min-width: 850px) {
+  .mobileOnly {
+    display: none !important;
+  }
+}
+
+@media screen and (max-width: 850px) {
+  .desktopOnly {
+    display: none !important;
+  }
+  nav .menu {
+    width: auto;
+  }
+}
