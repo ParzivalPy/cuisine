@@ -38,10 +38,11 @@
         <?php else: ?>
             <div class="alert alert-success" role="alert">
                 Bonjour <?php echo $_SESSION['LOGGED_USER']['email']; ?> et bienvenue sur le site !
+                <a href="logout.php">Déconnexion</a>
             </div>
         <?php endif; ?>
     </div>
-    <script src="script.js"></script>
+    <script src="../script.js"></script>
 </body>
 
 </html>
