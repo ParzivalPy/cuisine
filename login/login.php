@@ -37,9 +37,11 @@
         <?php else: ?>
             <div class="alert alert-success" role="alert">
                 Nom : <?php echo $_SESSION['LOGGED_USER']['full_name'];?>
+                <br />
                 Email : <?php echo $_SESSION['LOGGED_USER']['email'];?>
-                Age : <?php echo $_SESSION['LOGGED_USER']['age'];?>
-
+                <br />
+                Age : <?php echo $_SESSION['LOGGED_USER']['age'];?> ans
+                <br />
                 <a href="logout.php">Déconnexion</a>
             </div>
         <?php endif; ?>
