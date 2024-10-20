@@ -1,0 +1,42 @@
+.corps {
+    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.nomPartie {
+    margin-bottom: 20px;
+}
+
+.entree {
+    position: relative;
+    margin: 5% 10%;
+}
+
+.entreeChild {
+    display: flex;
+    gap: 25px;
+    overflow-y: hidden;
+    overflow-x: scroll;
+    flex-wrap: nowrap;
+    padding-bottom: 20px;
+    
+}
+
+.entreeChild::-webkit-scrollbar {
+    background-color: #efefef;
+    height: 5px;
+}
+
+.entreeChild::-webkit-scrollbar-thumb {
+    background-color: #000000;
+    border: solid 0 transparent;
+    border-radius: 3px;
+}
+
+.element {
+    min-width: 250px;
+    min-height: 350px;
+    max-width: 250px;
+    max-height: 350px;
+    border-radius: 20px;
+    border: #000000 solid 3px;
+}

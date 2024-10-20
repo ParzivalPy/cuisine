@@ -38,10 +38,10 @@ session_start();
       <p>Email: </p><input type="text" id="afficheMail" readOnly></input>
       <p>Sujet: </p><input type="text" id="afficheSubject" readOnly></input>
       <p>Message: </p><textarea type="text" id="afficheMessage" readOnly></textarea></input>
-      <label for="submit"><a href="index.php">Envoyer !</a></label>
+      <label for="submit"><a href="../index.php">Envoyer !</a></label>
     </div>
   </div>
-  <script src="script.js"></script>
+  <script src="../script.js"></script>
 </body>
 
 </html>
