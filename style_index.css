@@ -35,8 +35,8 @@
 .element {
     min-width: 143px;
     min-height: 200px;
-    max-width: 250px;
-    max-height: 350px;
+    width: 250px;
+    height: 350px;
     border-radius: 20px;
     border: #000000 solid 3px;
 }
