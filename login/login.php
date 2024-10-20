@@ -36,7 +36,10 @@
             <!-- Si utilisateur/trice bien connectée on affiche un message de succès -->
         <?php else: ?>
             <div class="alert alert-success" role="alert">
-                Bonjour <?php echo $_SESSION['LOGGED_USER']['email']; ?> et bienvenue sur le site !
+                Nom : <?php echo $_SESSION['LOGGED_USER']['full_name'];?>
+                Email : <?php echo $_SESSION['LOGGED_USER']['email'];?>
+                Age : <?php echo $_SESSION['LOGGED_USER']['age'];?>
+
                 <a href="logout.php">Déconnexion</a>
             </div>
         <?php endif; ?>
