@@ -33,8 +33,8 @@
 }
 
 .element {
-    min-width: 250px;
-    min-height: 350px;
+    min-width: 143px;
+    min-height: 200px;
     max-width: 250px;
     max-height: 350px;
     border-radius: 20px;

@@ -35,16 +35,16 @@ session_start();
     <div class="entree">
       <h2 class="nomPartie">PLATS</h2>
       <div class="entreeChild">
-        <div class="element"><img src="img-connexion.jpg"></div>
-        <div class="element"><img src="img-connexion.jpg"></div>
-        <div class="element"><img src="img-connexion.jpg"></div>
-        <div class="element"><img src="img-connexion.jpg"></div>
-        <div class="element"><img src="img-connexion.jpg"></div>
-        <div class="element"><img src="img-connexion.jpg"></div>
-        <div class="element"><img src="img-connexion.jpg"></div>
-        <div class="element"><img src="img-connexion.jpg"></div>
-        <div class="element"><img src="img-connexion.jpg"></div>
-        <div class="element"><img src="img-connexion.jpg"></div>
+        <div class="element"></div>
+        <div class="element"></div>
+        <div class="element"></div>
+        <div class="element"></div>
+        <div class="element"></div>
+        <div class="element"></div>
+        <div class="element"></div>
+        <div class="element"></div>
+        <div class="element"></div>
+        <div class="element"></div>
       </div>
     </div>
     <div class="entree">
