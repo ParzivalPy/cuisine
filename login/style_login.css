@@ -44,3 +44,10 @@ img {
   width: 50%;
   height: auto;
 }
+
+form > p {
+  margin-top: 20px;
+  text-align: center;
+  font-size: 0.8em;
+  font-style: italic
+}

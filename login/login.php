@@ -31,9 +31,9 @@
                     <label for="password" class="form-label">Mot de passe</label>
                     <input type="password" class="form-control" id="password" name="password">
                 </div>
+                <p>Pas de compte ?<br><a href="../register/register.php">Inscrivez-vous...</a></p>
                 <input type="submit" id="submit">
             </form>
-            <p>Pas de compte ?<br>Inscrivez-vous...</p>
         <?php else: ?>
             <div class="alert alert-success" role="alert">
                 Nom : <?php echo $_SESSION['LOGGED_USER']['last_name'];?> <?php echo $_SESSION['LOGGED_USER']['first_name']?>

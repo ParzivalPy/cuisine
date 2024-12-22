@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cuisine - Inscription</title>
     <link href="../style.css" rel="stylesheet" type="text/css" />
-    <link href="style_login.css" rel="stylesheet" type="text/css">
+    <link href="style_register.css" rel="stylesheet" type="text/css">
 </head>
 <body>
     <form method="POST" action="submit_register.php">
