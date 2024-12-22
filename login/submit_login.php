@@ -1,42 +1,64 @@
 <?php
 
 session_start();
-require_once('../variables.php');
 require_once('../functions.php');
+require_once('../sql/sql.php');
 
-/**
- * On ne traite pas les super globales provenant de l'utilisateur directement,
- * ces données doivent être testées et vérifiées.
- */
 $postData = $_POST;
 
 // Validation du formulaire
-if (isset($postData['email']) &&  isset($postData['password'])) {
+if (isset($postData['email']) && isset($postData['password'])) {
     if (!filter_var($postData['email'], FILTER_VALIDATE_EMAIL)) {
         $_SESSION['LOGIN_ERROR_MESSAGE'] = 'Il faut un email valide pour soumettre le formulaire.';
     } else {
-        foreach ($users as $user) {
-            if (
-                $user['email'] === $postData['email'] &&
-                $user['password'] === $postData['password']
-            ) {
-                $_SESSION['LOGGED_USER'] = [
-                    'full_name' => $user['full_name'],
-                    'email' => $user['email'],
-                    'age' => $user['age'],
-                    'user_id' => $user['user_id'],
-                ];
-            }
+        $email = $postData['email'];
+        $password = $postData['password'];
+
+        // Connexion a la base de données et récupération du mot de passe
+        $conn = mysqli_connect("mysql-arthus.alwaysdata.net", "arthus", "!Bulldog44!700", "arthus_profils");
+
+        if (!$conn) {
+            die("Echec de la connexion : " . mysqli_connect_error());
         }
+
+        $sql = "SELECT * FROM `profils` WHERE `email`='$email'";
+        $result = mysqli_query($conn, $sql);
+
+        if ($result) {
+            if (mysqli_num_rows($result) > 0) {
+                $user = mysqli_fetch_assoc($result);
+
+                // Vérification du mot de passe
+                if ($user['password'] === $password) {
+                    $_SESSION['LOGGED_USER'] = [
+                        'last_name' => $user['last_name'],
+                        'first_name' => $user['first_name'],
+                        'pseudo' => $user['pseudo'],
+                        'email' => $user['email'],
+                        'user_id' => $user['user_id'],
+                    ];
+                } else {
+                    $_SESSION['LOGIN_ERROR_MESSAGE'] = 'Mot de passe incorrect.';
+                }
+            } else {
+                $_SESSION['LOGIN_ERROR_MESSAGE'] = 'Aucun utilisateur trouvé avec cet email.';
+            }
+        } else {
+            $_SESSION['LOGIN_ERROR_MESSAGE'] = 'Erreur lors de la requête SQL : ' . mysqli_error($conn);
+        }
+
+        mysqli_close($conn);
 
         if (!isset($_SESSION['LOGGED_USER'])) {
             $_SESSION['LOGIN_ERROR_MESSAGE'] = sprintf(
-                'Les informations envoyées ne permettent pas de vous identifier : (%s/%s)',
-                $postData['email'],
-                strip_tags($postData['password'])
+                'Les informations envoyées ne permettent pas de vous identifier',
             );
         }
     }
-
-    redirectToUrl('../index.php');
+} else {
+    $_SESSION['LOGIN_ERROR_MESSAGE'] = 'Veuillez remplir tous les champs du formulaire.';
 }
+
+header('Location: login.php');
+exit();
+?>

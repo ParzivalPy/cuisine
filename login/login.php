@@ -33,14 +33,12 @@
                 </div>
                 <input type="submit" id="submit">
             </form>
-            <!-- Si utilisateur/trice bien connectée on affiche un message de succès -->
+            <p>Pas de compte ?<br>Inscrivez-vous...</p>
         <?php else: ?>
             <div class="alert alert-success" role="alert">
-                Nom : <?php echo $_SESSION['LOGGED_USER']['full_name'];?>
+                Nom : <?php echo $_SESSION['LOGGED_USER']['last_name'];?> <?php echo $_SESSION['LOGGED_USER']['first_name']?>
                 <br />
                 Email : <?php echo $_SESSION['LOGGED_USER']['email'];?>
-                <br />
-                Age : <?php echo $_SESSION['LOGGED_USER']['age'];?> ans
                 <br />
                 <a href="logout.php">Déconnexion</a>
             </div>
