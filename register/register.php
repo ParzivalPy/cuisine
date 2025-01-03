@@ -14,6 +14,12 @@
     <?php require_once("../header.php"); ?>
     <div class="page">
         <form method="POST" action="submit_register.php">
+            <?php if (isset($_SESSION['REGISTER_ERROR_MESSAGE'])): ?>
+                <div class="alert alert-danger" role="alert">
+                    <?php echo $_SESSION['REGISTER_ERROR_MESSAGE'];
+                    unset($_SESSION['REGISTER_ERROR_MESSAGE']); ?>
+                </div>
+            <?php endif; ?>
             <div class="noms">
                 <div class="mb-3" style="width: 45%;">
                     <label for="last_name" class="form-label">Nom</label>

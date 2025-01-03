@@ -1,10 +1,10 @@
 <header>
   <div class="classicMenu" id="classicMenu">
-    <a href="/index.php">
+    <a href="/www/index.php">
       <h1>CUISINE</h1>
     </a>
     <ul class="menu desktopOnly">
-      <li><a href="/login/login.php" style="display:flex;align-items:center;text-transform: uppercase;"><svg
+      <li><a href="/www/login/login.php" style="display:flex;align-items:center;text-transform: uppercase;"><svg
             width="24px" height="24px" stroke-width="1.5" viewBox="0 0 24 24" fill="none" xmlns="http:/.w3.org/2000/svg"
             color="#000000">
             <path
@@ -24,7 +24,7 @@
           }
           ?>
         </a></li>
-      <li><a href="/contact/contact.php">CONTACT</a></li>
+      <li><a href="/www/contact/contact.php">CONTACT</a></li>
       <li><a href="">DESSERTS</a></li>
       <li><a href="">PLATS</a></li>
       <li><a href="">ENTRÉES</a></li>
@@ -40,7 +40,7 @@
   <div id="menuParent">
     <div id="menu">
       <div class="classicMenu" id="boxMenuDeroulant">
-        <a href="/index.php">
+        <a href="/www/index.php">
           <h1>CUISINE</h1>
         </a>
         <label class="openMenu mobileOnly" for="menu-check"><svg width="24px" height="24px" stroke-width="1.5"
@@ -56,8 +56,8 @@
         <li><a href="">DESSERTS</a></li>
       </ul>
       <ul class="menuProfile">
-        <li><a href="/contact/contact.php">CONTACT</a></li>
-        <li><a href="/login/login.php" style="display: flex; align-items: center; gap: 10px;"
+        <li><a href="/www/contact/contact.php">CONTACT</a></li>
+        <li><a href="/www/login/login.php" style="display: flex; align-items: center; gap: 10px;"
             id="wrappable-menu-profile"><svg width="24px" height="24px" stroke-width="1.5" viewBox="0 0 24 24"
               fill="none" xmlns="http:/.w3.org/2000/svg" color="#000000">
               <path
