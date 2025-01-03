@@ -25,17 +25,17 @@
                 <div class="mb-3">
                     <label for="email" class="form-label">Email</label>
                     <input type="email" class="form-control" id="email" name="email" aria-describedby="email-help"
-                        placeholder="you@exemple.com">
+                        placeholder="you@exemple.com" required>
                 </div>
                 <div class="mb-3">
                     <label for="password" class="form-label">Mot de passe</label>
-                    <input type="password" class="form-control" id="password" name="password">
+                    <input type="password" required class="form-control" id="password" name="password">
                 </div>
                 <p>Pas de compte ?<br><a href="../register/register.php">Inscrivez-vous...</a></p>
                 <input type="submit" id="submit">
             </form>
         <?php else: ?>
-            <div class="alert alert-success" role="alert">
+            <div>
                 Nom : <?php echo $_SESSION['LOGGED_USER']['last_name']; ?>
                 <?php echo $_SESSION['LOGGED_USER']['first_name'] ?>
                 <br />
