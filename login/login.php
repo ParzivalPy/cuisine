@@ -36,9 +36,10 @@
             </form>
         <?php else: ?>
             <div class="alert alert-success" role="alert">
-                Nom : <?php echo $_SESSION['LOGGED_USER']['last_name'];?> <?php echo $_SESSION['LOGGED_USER']['first_name']?>
+                Nom : <?php echo $_SESSION['LOGGED_USER']['last_name']; ?>
+                <?php echo $_SESSION['LOGGED_USER']['first_name'] ?>
                 <br />
-                Email : <?php echo $_SESSION['LOGGED_USER']['email'];?>
+                Email : <?php echo $_SESSION['LOGGED_USER']['email']; ?>
                 <br />
                 <a href="logout.php">Déconnexion</a>
             </div>

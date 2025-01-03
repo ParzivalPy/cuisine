@@ -21,7 +21,7 @@ function linkToSql($email)
         echo "Erreur : " . $sql . "<br>" . mysqli_error($conn);
     }
 
-    mysqli_close( $conn );
+    mysqli_close($conn);
 }
 
 // linkToSql("gaelcharlotte@free.fr");

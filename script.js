@@ -1,14 +1,14 @@
 let checkbox = document.getElementById("menu-check");
 
-checkbox.addEventListener('change', function() {
+checkbox.addEventListener("change", function () {
   divMenu = document.getElementById("menuParent");
   classic = document.getElementById("classicMenu");
   if (this.checked) {
-    divMenu.setAttribute("style","display: flex;");
-    classic.setAttribute("style","display: none;");
+    divMenu.setAttribute("style", "display: flex;");
+    classic.setAttribute("style", "display: none;");
   } else {
-    divMenu.setAttribute("style","display: none;");
-    classic.setAttribute("style","display: flex;")
+    divMenu.setAttribute("style", "display: none;");
+    classic.setAttribute("style", "display: flex;");
   }
 });
 
@@ -26,4 +26,4 @@ function confirmMessage() {
     popupParent = document.getElementById("popupParent");
     popupParent.setAttribute("style", "display: block;");
   }
-};
+}

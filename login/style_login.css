@@ -36,7 +36,8 @@ input {
   background-color: #000000;
 }
 
-input::placeholder, textarea::placeholder {
+input::placeholder,
+textarea::placeholder {
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
 }
 
@@ -49,5 +50,5 @@ form > p {
   margin-top: 20px;
   text-align: center;
   font-size: 0.8em;
-  font-style: italic
+  font-style: italic;
 }

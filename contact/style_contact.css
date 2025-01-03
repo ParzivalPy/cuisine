@@ -24,7 +24,8 @@ textarea {
   border-radius: 3px;
 }
 
-#submit, #WrongSubmit {
+#submit,
+#WrongSubmit {
   color: #000000;
   margin-top: 20px;
   background-color: #ffffff;
@@ -39,7 +40,8 @@ textarea {
   background-color: #000000;
 }
 
-input::placeholder, textarea::placeholder {
+input::placeholder,
+textarea::placeholder {
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
 }
 
