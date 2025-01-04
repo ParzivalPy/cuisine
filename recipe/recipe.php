@@ -23,30 +23,30 @@ require_once(__DIR__ . '/../functions.php');
     <div class="corps">
         <div class="container">
             <div class="title">
-                <h1><?= $recipe['title'] ?></h1>
+                <h2><?= $recipe['title'] ?></h2>
                 <h6>Auteur: <?= $author['pseudo']?></h6>
             </div>
             <div class="caracteristiques">
                 <div class="caracteristique">
-                    <h2>Temps de préparation</h2>
+                    <h3>Temps de préparation</h3>
                     <p><?= $recipe['prep_time'] ?> minutes</p>
                 </div>
                 <div class="caracteristique">
-                    <h2>Temps de cuisson</h2>
+                    <h3>Temps de cuisson</h3>
                     <p><?= $recipe['baking_time'] ?> minutes</p>
                 </div>
                 <div class="caracteristique">
-                    <h2>Nombre de personnes</h2>
-                    <p><?= $recipe['people_num'] ?></p>
+                    <h3>Nombre de personnes</h3>
+                    <p><?= $recipe['people_num'] ?> personnes</p>
                 </div>
             </div>
             <div class="recette">
                 <div class="recetteInfo">
-                    <h2>Ingrédients</h2>
+                    <h3>Ingrédients</h3>
                     <p><?= nl2br($recipe['ingredients']) ?></p>
                 </div>
                 <div class="recetteInfo">
-                    <h2>Préparation</h2>
+                    <h3>Préparation</h3>
                     <p><?= nl2br($recipe['instructions']) ?></p>
                 </div>
             </div>

@@ -10,6 +10,13 @@
     max-width: 80%;
 }
 
+form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+}
+
 .title {
     font-size: 30px;
     text-align: center;
@@ -21,14 +28,24 @@
     font-weight: 400;
 }
 
+.caracteristiques {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 100%;
+    margin-top: 20px;
+}
+
+.caracteristiques .caracteristique {
+    margin-bottom: 20px;
+}
+
 .recette {
     display: flex;
     text-align: justify;
     flex-direction: column;
-    padding: 10px;
     width: 100%;
     background-color: white;
-    margin-bottom: 20px;
 }
 
 .recetteInfo {
@@ -41,4 +58,10 @@
 
 .recetteInfo h2 {
     margin-bottom: 10px;
+}
+
+.infos {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }

@@ -63,7 +63,7 @@
                         <div class="recette">
                             <div class="description">
                                 <h4><?php echo $recipe['title']; ?></h4>
-                                <p>Description : <?php nl2br($recipe["description"])</p>
+                                <p>Description : <?php nl2br($recipe["description"])?></p>
                                 <a href="../recipe/recipe.php?id=<?php echo $recipe['id']; ?>">Voir la recette</a>
                             </div>
                         </div>

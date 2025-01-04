@@ -14,15 +14,34 @@
     <?php require_once("../header.php"); ?>
     <div class="page">
         <form action="submit_add_recipe.php" method="POST">
-            <label for="title">Titre :</label>
-            <input type="text" id="title" name="title" autofocus required>
-            <br>
-            <label for="ingredients">Ingredients :</label><br>
-            <textarea wrap="soft" id="ingredients" name="ingredients" required></textarea>
-            <br>
-            <label for="instructions">Instructions :</label><br>
-            <textarea wrap="soft" id="instructions" name="instructions" required></textarea>
-            <br>
+            <div>
+                <label for="title">Titre :</label>
+                <input type="text" id="title" name="title" autofocus required>
+            </div>
+            <div>
+                <label for="desc">Description :</label>
+                <textarea wrap="soft" id="desc" name="desc" required></textarea>
+            </div>
+            <div>
+                <label for="prep_time">Temps de préparation :</label>
+                <input type="number" min="0" id="prep_time" name="prep_time" required>
+            </div>
+            <div>
+                <label for="baking_time">Temps de cuisson :</label>
+                <input type="number" min="0" id="baking_time" name="baking_time" required>
+            </div>
+            <div>
+                <label for="people_num">Nombre de personnes :</label>
+                <input type="number" min="0" id="people_num" name="people_num" required>
+            </div>
+            <div>
+                <label for="ingredients">Ingredients :</label><br>
+                <textarea wrap="soft" id="ingredients" name="ingredients" required></textarea>
+            </div>
+            <div>
+                <label for="instructions">Instructions :</label><br>
+                <textarea wrap="soft" id="instructions" name="instructions" required></textarea>
+            </div>
             <input type="submit" id="submit" value="Ajouter la recette"></input>
         </form>
     </div>
