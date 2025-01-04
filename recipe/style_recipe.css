@@ -1,0 +1,44 @@
+.corps {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.container {
+    max-width: 80%;
+}
+
+.title {
+    font-size: 30px;
+    text-align: center;
+    margin-top: 50px;
+}
+
+.title h6 {
+    font-style: italic;
+    font-weight: 400;
+}
+
+.recette {
+    display: flex;
+    text-align: justify;
+    flex-direction: column;
+    padding: 10px;
+    width: 100%;
+    background-color: white;
+    margin-bottom: 20px;
+}
+
+.recetteInfo {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: left;
+    margin-bottom: 20px;
+}
+
+.recetteInfo h2 {
+    margin-bottom: 10px;
+}

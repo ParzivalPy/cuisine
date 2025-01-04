@@ -28,7 +28,7 @@ session_start();
         foreach ($recipes as $recipe):
           ?>
           <div class="recette">
-            <a href="recette.php?id=<?= $recipe['id'] ?>">
+            <a href="recipe/recipe.php?id=<?= $recipe['id'] ?>">
               <div class="recetteInfo">
                 <h2><?= $recipe['title'] ?></h2>
               </div>

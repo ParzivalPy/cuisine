@@ -36,4 +36,20 @@ function scrapRecipe(int $num, mysqli $conn): array
     return $recipes;
 } 
 
+function getRecipeById(int $id, mysqli $conn): array
+{
+    $sql = "SELECT * FROM `recettes` WHERE `id` = $id";
+    $result = mysqli_query($conn, $sql);
+
+    return mysqli_fetch_assoc($result);
+}
+
+function getAuthorById(int $id, mysqli $conn): array
+{
+    $sql = "SELECT * FROM `profils` WHERE `id` = $id";
+    $result = mysqli_query($conn, $sql);
+
+    return mysqli_fetch_assoc($result);
+}
+
 ?>
