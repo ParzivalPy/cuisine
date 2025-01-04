@@ -18,14 +18,29 @@
             <input type="text" id="title" name="title" autofocus required>
             <br>
             <label for="ingredients">Ingredients :</label><br>
-            <textarea id="ingredients" name="ingredients" required></textarea>
+            <textarea wrap="soft" id="ingredients" name="ingredients" required></textarea>
             <br>
             <label for="instructions">Instructions :</label><br>
-            <textarea id="instructions" name="instructions" required></textarea>
+            <textarea wrap="soft" id="instructions" name="instructions" required></textarea>
             <br>
             <input type="submit" id="submit" value="Ajouter la recette"></input>
         </form>
     </div>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            var textareas = document.querySelectorAll('textarea');
+
+            textareas.forEach(function (textarea) {
+                textarea.style.height = 'auto';
+                textarea.style.height = (textarea.scrollHeight) + 'px';
+
+                textarea.addEventListener('input', function () {
+                    textarea.style.height = 'auto';
+                    textarea.style.height = (textarea.scrollHeight) + 'px';
+                });
+            });
+        });
+    </script>
 </body>
 
 </html>

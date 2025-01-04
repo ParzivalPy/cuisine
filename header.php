@@ -68,7 +68,16 @@
               <path
                 d="M12 12C13.6569 12 15 10.6569 15 9C15 7.34315 13.6569 6 12 6C10.3431 6 9 7.34315 9 9C9 10.6569 10.3431 12 12 12Z"
                 stroke="#000000" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
-            </svg>PROFIL</a></li>
+            </svg>
+            <?php
+            if (isset($_SESSION['LOGGED_USER'])) {
+              echo $_SESSION['LOGGED_USER']['pseudo'];
+            } else {
+              echo "PROFIL";
+            }
+            ?>
+          </a>
+        </li>
       </ul>
     </div>
   </div>
