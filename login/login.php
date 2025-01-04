@@ -59,10 +59,15 @@
                     require_once("../functions.php");
                     $conn = connectToDb();
                     $recipes = getRecipeByAuthor($_SESSION['LOGGED_USER']['user_id'], $conn);
-                    foreach ($recipes as $recipe) {
-                        echo "<a href='../recipe/recipe.php?id={$recipe['id']}'>{$recipe['title']}</a><br />";
-                    }
-                    ?>
+                    foreach ($recipes as $recipe): ?>
+                        <div class="recette">
+                            <div class="description">
+                                <h4><?php echo $recipe['title']; ?></h4>
+                                <p>Description : <?php nl2br($recipe["description"])</p>
+                                <a href="../recipe/recipe.php?id=<?php echo $recipe['id']; ?>">Voir la recette</a>
+                            </div>
+                        </div>
+                    <?php endforeach; ?>
                 </div>
             </div>
         <?php endif; ?>

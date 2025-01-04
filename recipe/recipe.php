@@ -26,6 +26,20 @@ require_once(__DIR__ . '/../functions.php');
                 <h1><?= $recipe['title'] ?></h1>
                 <h6>Auteur: <?= $author['pseudo']?></h6>
             </div>
+            <div class="caracteristiques">
+                <div class="caracteristique">
+                    <h2>Temps de préparation</h2>
+                    <p><?= $recipe['prep_time'] ?> minutes</p>
+                </div>
+                <div class="caracteristique">
+                    <h2>Temps de cuisson</h2>
+                    <p><?= $recipe['baking_time'] ?> minutes</p>
+                </div>
+                <div class="caracteristique">
+                    <h2>Nombre de personnes</h2>
+                    <p><?= $recipe['people_num'] ?></p>
+                </div>
+            </div>
             <div class="recette">
                 <div class="recetteInfo">
                     <h2>Ingrédients</h2>

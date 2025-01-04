@@ -77,3 +77,11 @@ form > p {
   border-radius: 3px;
   justify-content: space-evenly;
 }
+
+.recette {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 10px;
+  border: solid black 3px;
+  border-radius: 10px;
+}
