@@ -52,4 +52,18 @@ function getAuthorById(int $id, mysqli $conn): array
     return mysqli_fetch_assoc($result);
 }
 
+function getRecipeByAuthor(int $id, mysqli $conn): array
+{
+    $sql = "SELECT * FROM `recettes` WHERE `id_author` = $id";
+    $result = mysqli_query($conn, $sql);
+
+    $recipes = [];
+
+    while ($row = mysqli_fetch_assoc($result)) {
+        $recipes[] = $row;
+    }
+
+    return $recipes;
+}
+
 ?>

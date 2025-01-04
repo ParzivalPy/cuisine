@@ -41,15 +41,29 @@
                 <input type="submit" id="submit">
             </form>
         <?php else: ?>
-            <div>
-                Nom : <?php echo $_SESSION['LOGGED_USER']['last_name']; ?>
-                <?php echo $_SESSION['LOGGED_USER']['first_name'] ?>
-                <br />
-                Email : <?php echo $_SESSION['LOGGED_USER']['email']; ?>
-                <br />
-                Pseudo : <?php echo $_SESSION['LOGGED_USER']['pseudo']; ?>
-                <br />
-                <a href="logout.php">Déconnexion</a>
+            <div class="corps">
+                <h3>INFORMATIONS</h3>
+                <div class="container informations">
+                    Nom : <?php echo $_SESSION['LOGGED_USER']['last_name']; ?>
+                    <?php echo $_SESSION['LOGGED_USER']['first_name'] ?>
+                    <br />
+                    Email : <?php echo $_SESSION['LOGGED_USER']['email']; ?>
+                    <br />
+                    Pseudo : <?php echo $_SESSION['LOGGED_USER']['pseudo']; ?>
+                    <br />
+                    <a href="logout.php">Déconnexion</a>
+                </div>
+                <h3>RECETTES</h3>
+                <div class="container recettes">
+                    <?php
+                    require_once("../functions.php");
+                    $conn = connectToDb();
+                    $recipes = getRecipeByAuthor($_SESSION['LOGGED_USER']['user_id'], $conn);
+                    foreach ($recipes as $recipe) {
+                        echo "<a href='../recipe/recipe.php?id={$recipe['id']}'>{$recipe['title']}</a><br />";
+                    }
+                    ?>
+                </div>
             </div>
         <?php endif; ?>
     </div>

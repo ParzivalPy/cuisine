@@ -61,3 +61,19 @@ form > p {
   pointer-events: none;
   cursor: default;
 }
+
+.corps {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  margin-top: 30px;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  border-left: solid black 3px;
+  padding-left: 15px;
+  border-radius: 3px;
+  justify-content: space-evenly;
+}
