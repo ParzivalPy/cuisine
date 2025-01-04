@@ -47,6 +47,7 @@
             </div>
             <input type="submit" id="submit">
         </form>
+        <script src="../script.js"></script>
     </div>
 </body>
 

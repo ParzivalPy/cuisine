@@ -38,6 +38,7 @@ require_once(__DIR__ . '/../functions.php');
             </div>
         </div>
     </div>
+    <script src="../script.js"></script>
 </body>
 
 </html>

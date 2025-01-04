@@ -31,7 +31,13 @@
                     <label for="password" class="form-label">Mot de passe</label>
                     <input type="password" required class="form-control" id="password" name="password">
                 </div>
-                <p>Pas de compte ?<br><a href="../register/register.php">Inscrivez-vous...</a></p>
+                <p>
+                    Pas de compte ?
+                    <br>
+                    <a href="../register/register.php" class="disabled">Inscrivez-vous...</a>
+                    <br>
+                    <b>Les inscriptions sont désactivées pour le moment.</b>
+                </p>
                 <input type="submit" id="submit">
             </form>
         <?php else: ?>
@@ -43,8 +49,6 @@
                 <br />
                 Pseudo : <?php echo $_SESSION['LOGGED_USER']['pseudo']; ?>
                 <br />
-                Id: <?php echo $_SESSION['LOGGED_USER']['user_id']; ?>
-                <br>
                 <a href="logout.php">Déconnexion</a>
             </div>
         <?php endif; ?>
