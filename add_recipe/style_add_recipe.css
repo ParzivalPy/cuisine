@@ -30,6 +30,7 @@ textarea {
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
   width: 100%;
   overflow: hidden;
+  resize: none;
   border: none;
   border-bottom: 3px solid black;
   border-radius: 3px;

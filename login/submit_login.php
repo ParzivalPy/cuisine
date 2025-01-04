@@ -35,7 +35,7 @@ if (isset($postData['email']) && isset($postData['password'])) {
                         'first_name' => $user['first_name'],
                         'pseudo' => $user['pseudo'],
                         'email' => $user['email'],
-                        'user_id' => $user['user_id'],
+                        'user_id' => $user['id'],
                     ];
                 } else {
                     $_SESSION['LOGIN_ERROR_MESSAGE'] = 'Mot de passe incorrect.';

@@ -38,3 +38,26 @@
   border-radius: 20px;
   border: #000000 solid 3px;
 }
+
+.addRecipeContainer {
+  display: flex;
+  bottom: 50px;
+  justify-content: center;
+  background-color: transparent;
+  position: sticky;
+  width: 100%;
+}
+
+.addRecipe {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: white;
+  color: #ffffff;
+  border: solid 3px black;
+  border-radius: 50px;
+  padding: 0 20px;
+  height: 30px;
+  font-size: 20px;
+  cursor: pointer;
+}

@@ -41,6 +41,10 @@
                 <br />
                 Email : <?php echo $_SESSION['LOGGED_USER']['email']; ?>
                 <br />
+                Pseudo : <?php echo $_SESSION['LOGGED_USER']['pseudo']; ?>
+                <br />
+                Id: <?php echo $_SESSION['LOGGED_USER']['user_id']; ?>
+                <br>
                 <a href="logout.php">Déconnexion</a>
             </div>
         <?php endif; ?>

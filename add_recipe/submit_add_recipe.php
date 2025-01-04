@@ -9,6 +9,7 @@ if (isset($postData['title'], $postData['ingredients'], $postData['instructions'
     $title = $postData['title'];
     $ingredients = $postData['ingredients'];
     $instructions = $postData['instructions'];
+    $user_id = $_SESSION["LOGGED_USER"]['user_id'];
 
     $conn = mysqli_connect("mysql-arthus.alwaysdata.net", "arthus", "!Bulldog44!700", "arthus_profils");
 
@@ -16,7 +17,7 @@ if (isset($postData['title'], $postData['ingredients'], $postData['instructions'
         die("Connection failed: " . mysqli_connect_error());
     }
 
-    $sql = "INSERT INTO `recettes`(`title`, `ingredients`, `instructions`) VALUES ('$title','$ingredients','$instructions')";
+    $sql = "INSERT INTO `recettes`(`id_author`, `title`, `ingredients`, `instructions`) VALUES ('$user_id', '$title','$ingredients','$instructions')";
     if (mysqli_query($conn, $sql)) {
         echo "Recette ajoutée avec succès";
     } else {
@@ -27,4 +28,4 @@ if (isset($postData['title'], $postData['ingredients'], $postData['instructions'
     echo "All fields are required.";
 }
 
-header('../recette/add_recipe.php');
+redirectToUrl('../index.php');
