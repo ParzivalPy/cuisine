@@ -114,4 +114,14 @@ function modifyRecipe(array $postData, mysqli $conn): void
     }
 }
 
+function deleteRecipe(int $id, mysqli $conn): void
+{
+    $sql = "DELETE FROM `recettes` WHERE `id` = '$id'";
+    if (mysqli_query($conn, $sql)) {
+        echo "Recette supprimée avec succès";
+    } else {
+        echo ("Erreur : " . $sql . "<br>" . mysqli_error($conn));
+    }
+}
+
 ?>
