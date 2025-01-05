@@ -106,7 +106,7 @@ function modifyRecipe(array $postData, mysqli $conn): void
     $ingredients = str_replace("'", "\'", $ingredients);
     $instructions = str_replace("'", "\'", $instructions);
 
-    $sql = "UPDATE `recettes` SET `title`='$title',`description`='$desc',`people_num`='$people_num',`prep_time`='$prep_time',`baking_time`='$baking_time',`ingredients`='$ingredients',`instructions`='$instructions' WHERE `id` = $id";
+    $sql = "UPDATE `recettes` SET `title`='$title',`description`='$desc',`people_num`='$people_num',`prep_time`='$prep_time',`baking_time`='$baking_time',`ingredients`='$ingredients',`instructions`='$instructions' WHERE `id` = '$id'";
     if (mysqli_query($conn, $sql)) {
         echo "Recette modifiée avec succès";
     } else {

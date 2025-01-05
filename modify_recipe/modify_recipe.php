@@ -18,7 +18,7 @@ require_once "../functions.php";?>
     ?>
     <?php if (isset($_SESSION['LOGGED_USER']) && $_SESSION['LOGGED_USER']['user_id'] === $recipe['id_author']) : ?>
     <div class="page">
-        <form action="submit_add_recipe.php" method="POST">
+        <form action="submit_modify_recipe.php" method="POST">
             <div>
                 <label for="title">Titre :</label>
                 <input type="text" id="title" name="title" value="<?php echo $recipe['title']?>" autofocus required>
@@ -47,6 +47,7 @@ require_once "../functions.php";?>
                 <label for="instructions">Instructions :</label><br>
                 <textarea wrap="soft" id="instructions" name="instructions" required><?php echo $recipe['instructions']?></textarea>
             </div>
+            <input type="hidden" id="id" name="id" value="<?php echo $recipe['id']?>">
             <input type="submit" id="submit" value="Ajouter la recette"></input>
         </form>
     </div>
