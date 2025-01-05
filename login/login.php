@@ -92,7 +92,7 @@
                                     </div>
                                 </div>
                                 <div class="actions">
-                                    <a href="../recipe/edit_recipe.php?id=<?php echo $recipe['id']; ?>">
+                                    <a href="../modify_recipe/modify_recipe.php?id=<?php echo $recipe['id']; ?>">
                                         <svg width="24px" height="24px" viewBox="0 0 24 24" stroke-width="1.5" fill="none"
                                             xmlns="http://www.w3.org/2000/svg" color="#000000">
                                             <path

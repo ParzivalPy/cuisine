@@ -90,4 +90,28 @@ function pushRecipe(array $postData, mysqli $conn): void
     }
 }
 
+function modifyRecipe(array $postData, mysqli $conn): void
+{
+    $id = $postData['id'];
+    $title = $postData['title'];
+    $desc = $postData['desc'];
+    $prep_time = $postData['prep_time'];
+    $baking_time = $postData['baking_time'];
+    $people_num = $postData['people_num'];
+    $ingredients = $postData['ingredients'];
+    $instructions = $postData['instructions'];
+
+    $title = str_replace("'", "\'", $title);
+    $desc = str_replace("'", "\'", $desc);
+    $ingredients = str_replace("'", "\'", $ingredients);
+    $instructions = str_replace("'", "\'", $instructions);
+
+    $sql = "UPDATE `recettes` SET `title`='$title',`description`='$desc',`people_num`='$people_num',`prep_time`='$prep_time',`baking_time`='$baking_time',`ingredients`='$ingredients',`instructions`='$instructions' WHERE `id` = $id";
+    if (mysqli_query($conn, $sql)) {
+        echo "Recette modifiée avec succès";
+    } else {
+        echo ("Erreur : " . $sql . "<br>" . mysqli_error($conn));
+    }
+}
+
 ?>
