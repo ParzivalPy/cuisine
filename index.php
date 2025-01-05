@@ -19,7 +19,7 @@ session_start();
   <div class="corps">
     <div class="container">
       <div class="title">
-        <h1>Recettes</h1>
+        <h2>Recettes</h2>
       </div>
       <div class="recettes">
         <?php
@@ -30,7 +30,31 @@ session_start();
           <div class="recette">
             <a href="recipe/recipe.php?id=<?= $recipe['id'] ?>">
               <div class="recetteInfo">
-                <h2><?= $recipe['title'] ?></h2>
+                <h3 style="text-transform: capitalize;"><?= $recipe['title'] ?></h3>
+              </div>
+              <div class="infos">
+                <div class="description">
+                  <div class="recipe_informations">
+                    <div class="recipe_prep_time">
+                      <p><b>Temps de préparation :</b>
+                        <br>
+                        <?php echo $recipe['prep_time'] ?> minutes
+                      </p>
+                    </div>
+                    <div class="recipe_baking_time">
+                      <p><b>Temps de cuisson :</b>
+                        <br>
+                        <?php echo $recipe['baking_time'] ?> minutes
+                      </p>
+                    </div>
+                    <div class="recipe_people_num">
+                      <p><b>Nombre de personnes :</b>
+                        <br>
+                        <?php echo $recipe['people_num'] ?> personnes
+                      </p>
+                    </div>
+                  </div>
+                </div>
               </div>
             </a>
           </div>

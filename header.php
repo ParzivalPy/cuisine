@@ -25,9 +25,6 @@
           ?>
         </a></li>
       <li><a href="/www/contact/contact.php">CONTACT</a></li>
-      <li><a href="">DESSERTS</a></li>
-      <li><a href="">PLATS</a></li>
-      <li><a href="">ENTRÉES</a></li>
     </ul>
     <input type="checkbox" id="menu-check" name="menu-check" hidden />
     <label class="menu mobileOnly" for="menu-check"><svg width="24px" height="24px" stroke-width="1.5"
@@ -51,9 +48,6 @@
           </svg></label>
       </div>
       <ul class="wrappable">
-        <li><a href="">ENTRÉES</a></li>
-        <li><a href="">PLATS</a></li>
-        <li><a href="">DESSERTS</a></li>
       </ul>
       <ul class="menuProfile">
         <li><a href="/www/contact/contact.php">CONTACT</a></li>

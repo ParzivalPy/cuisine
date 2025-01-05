@@ -87,6 +87,10 @@ form > p {
   gap: 20px;
   border: solid black 3px;
   border-radius: 10px;
+  text-align: justify;
+  text-wrap: wrap !important;
+  word-break: break-all;
+  flex-wrap: wrap;
 }
 
 .description {
@@ -116,6 +120,8 @@ form > p {
   align-items: center;
   gap: 10px;
   margin: 0 15px;
+  flex-wrap: wrap;
+  flex-grow: 1;
 }
 
 .actions button {
