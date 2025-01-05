@@ -28,6 +28,10 @@ require_once(__DIR__ . '/../functions.php');
             </div>
             <div class="caracteristiques">
                 <div class="caracteristique">
+                    <h3>Description</h3>
+                    <p><?= $recipe['description'] ?></p>
+                </div>
+                <div class="caracteristique">
                     <h3>Temps de préparation</h3>
                     <p><?= $recipe['prep_time'] ?> minutes</p>
                 </div>

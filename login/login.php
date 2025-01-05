@@ -42,37 +42,40 @@
             </form>
         <?php else: ?>
             <div class="corps">
-                <h3>INFORMATIONS</h3>
-                <div class="container informations">
-                    Nom : <?php echo $_SESSION['LOGGED_USER']['last_name']; ?>
-                    <?php echo $_SESSION['LOGGED_USER']['first_name'] ?>
-                    <br />
-                    Email : <?php echo $_SESSION['LOGGED_USER']['email']; ?>
-                    <br />
-                    Pseudo : <?php echo $_SESSION['LOGGED_USER']['pseudo']; ?>
-                    <br />
-                    <a href="logout.php">Déconnexion</a>
+                <div class="information">
+                    <h3>INFORMATIONS</h3>
+                    <div class="container informations">
+                        Nom : <?php echo $_SESSION['LOGGED_USER']['last_name']; ?>
+                        <?php echo $_SESSION['LOGGED_USER']['first_name'] ?>
+                        <br />
+                        Email : <?php echo $_SESSION['LOGGED_USER']['email']; ?>
+                        <br />
+                        Pseudo : <?php echo $_SESSION['LOGGED_USER']['pseudo']; ?>
+                        <br />
+                        <a href="logout.php">Déconnexion</a>
+                    </div>
                 </div>
-                <h3>RECETTES</h3>
-                <div class="container recettes">
-                    <?php
-                    require_once("../functions.php");
-                    $conn = connectToDb();
-                    $recipes = getRecipeByAuthor($_SESSION['LOGGED_USER']['user_id'], $conn);
-                    foreach ($recipes as $recipe): ?>
-                        <div class="recette">
-                            <div class="description">
-                                <h4><?php echo $recipe['title']; ?></h4>
-                                <p>Description : <?php nl2br($recipe["description"])?></p>
-                                <a href="../recipe/recipe.php?id=<?php echo $recipe['id']; ?>">Voir la recette</a>
+                <div class="recettes">
+                    <h3>RECETTES</h3>
+                    <div class="container recettes">
+                        <?php
+                        require_once("../functions.php");
+                        $conn = connectToDb();
+                        $recipes = getRecipeByAuthor($_SESSION['LOGGED_USER']['user_id'], $conn);
+                        foreach ($recipes as $recipe): ?>
+                            <div class="recette">
+                                <div class="description">
+                                    <h4 style="text-transform: capitalize;"><?php echo $recipe['title']; ?></h4>
+                                    <p>Description : <?php nl2br($recipe["description"]) ?></p>
+                                    <a href="../recipe/recipe.php?id=<?php echo $recipe['id']; ?>">Voir la recette</a>
+                                </div>
                             </div>
-                        </div>
-                    <?php endforeach; ?>
+                        <?php endforeach; ?>
+                    </div>
                 </div>
-            </div>
-        <?php endif; ?>
-    </div>
-    <script src="../script.js"></script>
+            <?php endif; ?>
+        </div>
+        <script src="../script.js"></script>
 </body>
 
 </html>

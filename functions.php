@@ -77,6 +77,24 @@ function pushRecipe(array $postData, mysqli $conn): void
     $instructions = $postData['instructions'];
     $user_id = $_SESSION["LOGGED_USER"]['user_id'];
 
+    $title = str_replace("'", "\'", $title);
+    $desc = str_replace("'", "\'", $desc);
+    $ingredients = str_replace("'", "\'", $ingredients);
+    $instructions = str_replace("'", "\'", $instructions);
+
+    // foreach ($title as $key => $value) {
+    //     $title[$key] = str_replace("'", "\'", $value);
+    // }
+    // foreach ($title as $key => $value) {
+    //     $title[$key] = str_replace("'", "\'", $value);
+    // }
+    // foreach ($title as $key => $value) {
+    //     $title[$key] = str_replace("'", "\'", $value);
+    // }
+    // foreach ($title as $key => $value) {
+    //     $title[$key] = str_replace("'", "\'", $value);
+    // }
+
     $sql = "INSERT INTO `recettes`(`id_author`, `title`, `description`, `people_num`, `prep_time`, `baking_time`, `ingredients`, `instructions`) VALUES ('$user_id', '$title', '$desc', '$people_num', '$prep_time', '$baking_time', '$ingredients', '$instructions')";
     if (mysqli_query($conn, $sql)) {
         echo "Recette ajoutée avec succès";
