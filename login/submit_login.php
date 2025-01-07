@@ -36,8 +36,24 @@ if (isset($postData['email']) && isset($postData['password'])) {
                         'email' => $user['email'],
                         'user_id' => $user['id'],
                     ];
-                    setcookie("user_id", $user['id'], time() + 3600 * 24 * 7);
-                    setcookie("password", $user['password'], time() + 3600 * 24 * 7);
+                    setcookie(
+                        "email", 
+                        $user['email'], 
+                        [
+                            'expires' => time() + 3600 * 24 * 7,
+                            'secure' => true,
+                            'httponly' => true,
+                        ]
+                    );
+                    setcookie(
+                        "password", 
+                        $user['password'], 
+                        [
+                            'expires' => time() + 3600 * 24 * 7,
+                            'secure' => true,
+                            'httponly' => true,
+                        ]
+                    );
                 } else {
                     $_SESSION['LOGIN_ERROR_MESSAGE'] = 'Mot de passe incorrect.';
                 }

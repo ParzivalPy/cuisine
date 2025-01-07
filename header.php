@@ -1,4 +1,8 @@
 <header>
+  <?php
+    require_once('functions.php');
+    autoConnect();
+  ?>
   <div class="classicMenu" id="classicMenu">
     <a href="/www/index.php">
       <h1>CUISINE</h1>

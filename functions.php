@@ -124,4 +124,35 @@ function deleteRecipe(int $id, mysqli $conn): void
     }
 }
 
+function autoConnect() {
+    if (!isset($_SESSION['LOGGED_USER']) && isset($_COOKIE['email']) && isset($_COOKIE['password'])) {
+        $conn = connectToDb();
+
+        $email = $_COOKIE['email'];
+        $password = $_COOKIE['password'];
+
+        $sql = "SELECT * FROM `profils` WHERE `email`='$email'";
+        $result = mysqli_query($conn, $sql);
+
+        if ($result) {
+            if (mysqli_num_rows($result) > 0) {
+                $user = mysqli_fetch_assoc($result);
+
+                // Vérification du mot de passe
+                if ($user['password'] === $password) {
+                    $_SESSION['LOGGED_USER'] = [
+                        'last_name' => $user['last_name'],
+                        'first_name' => $user['first_name'],
+                        'pseudo' => $user['pseudo'],
+                        'email' => $user['email'],
+                        'user_id' => $user['id'],
+                    ];
+                }
+            }
+        }
+
+        mysqli_close($conn);
+    }
+}
+
 ?>
