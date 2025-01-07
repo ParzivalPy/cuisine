@@ -1,4 +1,12 @@
 <?php session_start(); ?>
+
+<?php
+if (!isset($_SESSION['LOGGED_USER']) && isset($_COOKIE['email']) && isset($_COOKIE['password'])) {
+    header('Location: autoconnect.php?page=' . $_SERVER['REQUEST_URI']);
+    exit;
+}
+?>
+
 <!DOCTYPE html>
 <html lang="fr">
 
@@ -34,7 +42,8 @@
             </div>
             <div class="mb-3">
                 <label for="pseudo" class="form-label">Pseudo</label>
-                <input required type="text" class="form-control" id="pseudo" name="pseudo" aria-describedby="pseudo-help">
+                <input required type="text" class="form-control" id="pseudo" name="pseudo"
+                    aria-describedby="pseudo-help">
             </div>
             <div class="mb-3">
                 <label for="email" class="form-label">Email</label>

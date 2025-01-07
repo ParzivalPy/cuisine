@@ -29,9 +29,11 @@ if (isset($postData['email']) && isset($postData['password']) && isset($postData
     if ($result_mail && mysqli_num_rows($result_mail) > 0) {
         $_SESSION['REGISTER_ERROR_MESSAGE'] = 'Un utilisateur avec cet email existe déjà.';
         header('Location: ../register/register.php');
+        exit;
     } else if ($result_pseudo && mysqli_num_rows($result_pseudo) > 0) {
         $_SESSION['REGISTER_ERROR_MESSAGE'] = 'Ce pseudo est déjà utilisé.';
         header('Location: ../register/register.php');
+        exit;
     } else {
         // Insertion du nouvel utilisateur
         $sql = "INSERT INTO `profils`(`last_name`, `first_name`, `pseudo`, `email`, `password`) VALUES ('$last_name','$first_name','$pseudo','$email','$password')";
@@ -42,14 +44,17 @@ if (isset($postData['email']) && isset($postData['password']) && isset($postData
             $err = "Erreur : " . $sql . "<br>" . mysqli_error($conn);
             echo '<script>alert("$err")</script>';
             header('Location: ../register/register.php');
+            exit;
         }
     }
 
     mysqli_close($conn);
-    // header('Location: ../login/login.php');
+    header('Location: ../login/login.php');
+    exit;
 } else {
     $_SESSION['REGISTER_ERROR_MESSAGE'] = 'Veuillez remplir tous les champs du formulaire.';
         header('Location: ../register/register.php');
+        exit;
 }
 
 exit();

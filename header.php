@@ -1,15 +1,11 @@
 <header>
-  <?php
-    if (!isset($_SESSION['LOGGED_USER'] && isset($_COOKIE['email']) && isset($_COOKIE['password']))) {
-      header('Location: autoconnect.php');
-    }
-  ?>
+  
   <div class="classicMenu" id="classicMenu">
-    <a href="/www/index.php">
+    <a href="/index.php">
       <h1>CUISINE</h1>
     </a>
     <ul class="menu desktopOnly">
-      <li><a href="/www/login/login.php" style="display:flex;align-items:center;text-transform: uppercase;"><svg
+      <li><a href="/login/login.php" style="display:flex;align-items:center;text-transform: uppercase;"><svg
             width="24px" height="24px" stroke-width="1.5" viewBox="0 0 24 24" fill="none" xmlns="http:/.w3.org/2000/svg"
             color="#000000">
             <path
@@ -29,7 +25,7 @@
           }
           ?>
         </a></li>
-      <li><a href="/www/contact/contact.php">CONTACT</a></li>
+      <li><a href="/contact/contact.php">CONTACT</a></li>
     </ul>
     <input type="checkbox" id="menu-check" name="menu-check" hidden />
     <label class="menu mobileOnly" for="menu-check"><svg width="24px" height="24px" stroke-width="1.5"
@@ -42,7 +38,7 @@
   <div id="menuParent">
     <div id="menu">
       <div class="classicMenu" id="boxMenuDeroulant">
-        <a href="/www/index.php">
+        <a href="/index.php">
           <h1>CUISINE</h1>
         </a>
         <label class="openMenu mobileOnly" for="menu-check"><svg width="24px" height="24px" stroke-width="1.5"
@@ -55,8 +51,8 @@
       <ul class="wrappable">
       </ul>
       <ul class="menuProfile">
-        <li><a href="/www/contact/contact.php">CONTACT</a></li>
-        <li><a href="/www/login/login.php" style="display:flex;align-items:center;text-transform: uppercase;"><svg
+        <li><a href="/contact/contact.php">CONTACT</a></li>
+        <li><a href="/login/login.php" style="display:flex;align-items:center;text-transform: uppercase;"><svg
               width="24px" height="24px" stroke-width="1.5" viewBox="0 0 24 24" fill="none"
               xmlns="http:/.w3.org/2000/svg" color="#000000">
               <path
