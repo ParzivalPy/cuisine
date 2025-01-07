@@ -1,7 +1,8 @@
 <header>
   <?php
-    require_once('functions.php');
-    autoConnect();
+    if (!isset($_SESSION['LOGGED_USER'] && isset($_COOKIE['email']) && isset($_COOKIE['password']))) {
+      header('Location: autoconnect.php');
+    }
   ?>
   <div class="classicMenu" id="classicMenu">
     <a href="/www/index.php">
