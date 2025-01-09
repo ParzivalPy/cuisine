@@ -152,6 +152,7 @@ function autoConnect(): void{
         }
     
         mysqli_close($conn);
+        header('Refresh:0');
     }
 }
 
