@@ -7,7 +7,7 @@ require_once('../functions.php');
 setcookie("email", "", time() - 3600, "/");
 setcookie("password", "", time() - 3600, "/");
 
-session_unset();
+$_SESSION = [];
 
 session_destroy();
 
