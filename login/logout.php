@@ -11,3 +11,5 @@ session_unset();
 session_destroy();
 
 redirectToUrl('../login/login.php');
+
+?>
