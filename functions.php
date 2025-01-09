@@ -124,20 +124,20 @@ function deleteRecipe(int $id, mysqli $conn): void
     }
 }
 
-function autoConnect() {
+function autoConnect(string $page): void{
     if (!isset($_SESSION['LOGGED_USER']) && isset($_COOKIE['email']) && isset($_COOKIE['password'])) {
         $conn = connectToDb();
-
+    
         $email = $_COOKIE['email'];
         $password = $_COOKIE['password'];
-
+    
         $sql = "SELECT * FROM `profils` WHERE `email`='$email'";
         $result = mysqli_query($conn, $sql);
-
+    
         if ($result) {
             if (mysqli_num_rows($result) > 0) {
                 $user = mysqli_fetch_assoc($result);
-
+    
                 // Vérification du mot de passe
                 if ($user['password'] === $password) {
                     $_SESSION['LOGGED_USER'] = [
@@ -150,9 +150,12 @@ function autoConnect() {
                 }
             }
         }
-
+    
         mysqli_close($conn);
     }
+    echo '<script>console.log('. $page . ')</script>';
+    header('Location: ' . $page);
+    exit();
 }
 
 ?>

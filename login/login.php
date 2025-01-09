@@ -1,8 +1,9 @@
 <?php session_start(); ?>
 <?php
+require_once('../functions.php');
 if (!isset($_SESSION['LOGGED_USER']) && isset($_COOKIE['email']) && isset($_COOKIE['password'])) {
-    header('Location: autoconnect.php?page=' . $_SERVER['REQUEST_URI']);
-    exit;
+  redirectToUrl('../autoconnect.php?page=' . $_SERVER['REQUEST_URI']);
+  exit();
 }
 ?>
 <!DOCTYPE html>

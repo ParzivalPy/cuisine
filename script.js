@@ -27,3 +27,7 @@ function confirmMessage() {
     popupParent.setAttribute("style", "display: block;");
   }
 }
+
+function redirectTo(url) {
+  window.location.href = url;
+}
