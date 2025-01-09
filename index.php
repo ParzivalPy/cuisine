@@ -1,9 +1,7 @@
 <?php
 require_once(__DIR__ . '/functions.php');
 session_start();
-$path = implode('', $_SERVER);
-echo "<p> $path </p>";
-// autoConnect($_SERVER['REQUEST_URI']);
+autoConnect();
 ?>
 
 <!DOCTYPE html>

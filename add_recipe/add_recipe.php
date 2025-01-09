@@ -1,9 +1,7 @@
-<?php session_start(); ?>
 <?php
-if (!isset($_SESSION['LOGGED_USER']) && isset($_COOKIE['email']) && isset($_COOKIE['password'])) {
-    header('Location: autoconnect.php?page=' . $_SERVER['REQUEST_URI']);
-    exit;
-}
+require_once("../functions.php");
+session_start();
+autoConnect();
 ?>
 <!DOCTYPE html>
 <html lang="fr">

@@ -124,7 +124,7 @@ function deleteRecipe(int $id, mysqli $conn): void
     }
 }
 
-function autoConnect(string $page): void{
+function autoConnect(): void{
     if (!isset($_SESSION['LOGGED_USER']) && isset($_COOKIE['email']) && isset($_COOKIE['password'])) {
         $conn = connectToDb();
     
@@ -153,9 +153,6 @@ function autoConnect(string $page): void{
     
         mysqli_close($conn);
     }
-    echo '<script>console.log('. $page . ')</script>';
-    header('Location: ' . $page);
-    exit();
 }
 
 ?>

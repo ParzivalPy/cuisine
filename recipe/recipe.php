@@ -1,12 +1,7 @@
 <?php
 session_start();
 require_once(__DIR__ . '/../functions.php');
-?>
-<?php
-if (!isset($_SESSION['LOGGED_USER']) && isset($_COOKIE['email']) && isset($_COOKIE['password'])) {
-    header('Location: autoconnect.php?page=' . $_SERVER['REQUEST_URI']);
-    exit;
-}
+autoConnect();
 ?>
 <!DOCTYPE html>
 <html lang="fr">
