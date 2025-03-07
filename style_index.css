@@ -56,9 +56,16 @@
 
 .recipe_informations {
   display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+  flex-direction: row;
   justify-content: space-evenly;
   align-items: center;
   margin-bottom: 10px;
+}
+
+.info {
+  min-width: 180px;
 }
 
 .addRecipeContainer {

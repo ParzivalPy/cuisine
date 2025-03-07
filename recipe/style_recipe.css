@@ -8,6 +8,7 @@
 
 .container {
     width: 40%;
+    min-width: 250px !important;
 }
 
 form {

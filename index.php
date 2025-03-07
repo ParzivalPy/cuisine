@@ -29,24 +29,24 @@ autoConnect();
         foreach ($recipes as $recipe):
           ?>
           <div class="recette">
-            <a href="recipe/recipe.php?id=<?= $recipe['id'] ?>">
+            <a href="recipe/recipe.php?id=<?= $recipe['id'] ?>" style="gap:30px">
               <div class="recetteInfo">
                 <h3 style="text-transform: capitalize;"><?= $recipe['title'] ?></h3>
               </div>
               <div class="recipe_informations">
-                <div class="recipe_prep_time">
+                <div class="recipe_prep_time info">
                   <p><b>Temps de préparation :</b>
                     <br>
                     <?php echo $recipe['prep_time'] ?> minutes
                   </p>
                 </div>
-                <div class="recipe_baking_time">
+                <div class="recipe_baking_time info">
                   <p><b>Temps de cuisson :</b>
                     <br>
                     <?php echo $recipe['baking_time'] ?> minutes
                   </p>
                 </div>
-                <div class="recipe_people_num">
+                <div class="recipe_people_num info">
                   <p><b>Nombre de personnes :</b>
                     <br>
                     <?php echo $recipe['people_num'] ?> personnes
