@@ -8,7 +8,7 @@ function redirectToUrl(string $url): never
 
 function connectToDb(): mysqli
 {
-    $conn = mysqli_connect("mysql-arthus.alwaysdata.net", "arthus", "!Bulldog44!700", "arthus_profils");
+    $conn = mysqli_connect("mysql-cuisine.alwaysdata.net", "cuisine", "4SOpq6IU2Ke3L7", "cuisine_base");
 
     if (!$conn) {
         die("Echec de la connexion : " . mysqli_connect_error());

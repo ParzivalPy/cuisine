@@ -13,7 +13,7 @@ if (isset($postData['email']) && isset($postData['password']) && isset($postData
     $pseudo = $postData['pseudo'];
 
     // Connexion à la base de données
-    $conn = mysqli_connect("mysql-arthus.alwaysdata.net", "arthus", "!Bulldog44!700", "arthus_profils");
+    $conn = connectToDb();
 
     if (!$conn) {
         die("Echec de la connexion : " . mysqli_connect_error());

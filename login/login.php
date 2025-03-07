@@ -36,7 +36,7 @@ autoConnect();?>
                 <p>
                     Pas de compte ?
                     <br>
-                    <a href="../register/register.php" class="disabled">Inscrivez-vous...</a>
+                    <a href="../register/register.php">Inscrivez-vous...</a>
                     <br>
                     <b>Les inscriptions sont désactivées pour le moment.</b>
                 </p>

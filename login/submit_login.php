@@ -14,7 +14,7 @@ if (isset($postData['email']) && isset($postData['password'])) {
         $password = $postData['password'];
 
         // Connexion a la base de données et récupération du mot de passe
-        $conn = mysqli_connect("mysql-arthus.alwaysdata.net", "arthus", "!Bulldog44!700", "arthus_profils");
+        $conn = connectToDb();
 
         if (!$conn) {
             die("Echec de la connexion : " . mysqli_connect_error());
