@@ -42,7 +42,7 @@ if (isset($postData['email']) && isset($postData['password']) && isset($postData
             echo "Nouveau enregistrement créé avec succès";
         } else {
             $err = "Erreur : " . $sql . "<br>" . mysqli_error($conn);
-            echo '<script>alert("$err")</script>';
+            $_SESSION['REGISTER_ERROR_MESSAGE'] = $err;
             header('Location: ../register/register.php');
             exit;
         }
@@ -53,6 +53,7 @@ if (isset($postData['email']) && isset($postData['password']) && isset($postData
     exit;
 } else {
     $_SESSION['REGISTER_ERROR_MESSAGE'] = 'Veuillez remplir tous les champs du formulaire.';
+    echo '<script>alert("Veuillez remplir tous les champs du formulaire.")</script>';
         header('Location: ../register/register.php');
         exit;
 }

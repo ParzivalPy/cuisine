@@ -15,6 +15,16 @@ header {
   gap: 25px;
   width: 100vw;
   padding: 15px 50px;
+  animation: expand 1s forwards;
+}
+
+@keyframes expand {
+  0% {
+    max-height: 0;
+  }
+  100% {
+    max-height: 100vh;
+  }
 }
 
 .classicMenu {
