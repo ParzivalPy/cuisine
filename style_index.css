@@ -39,7 +39,39 @@
   gap: 20px;
   border: solid 3px black;
   border-radius: 10px;
-  min-width: 210px;
+  min-width: 250px;
+}
+
+.filters > div {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: start !important;
+  width: 90%;
+}
+
+.filters > div > label {
+  width: 100%;
+}
+
+.filters input {
+  font-size: 1em;
+  width: 100% !important;
+  border: none;
+  border-bottom: 3px solid black;
+  border-radius: 3px;
+  outline: none;
+}
+
+.filters select {
+  font-size: 1em;
+  width: 100% !important;
+  border: none;
+  border-bottom: 3px solid black;
+  border-radius: 3px;
+  outline: none;
+  background-color: white;
 }
 
 .recettes {
@@ -48,7 +80,7 @@
   align-items: flex-start;
   flex-direction: column;
   flex-wrap: wrap;
-  min-width: 210px;
+  min-width: 370px;
 }
 
 .recette {
