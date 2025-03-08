@@ -40,12 +40,12 @@ autoConnect();
           <div class="filtre-type">
             <label for="category">Catégorie :</label>
             <select id="category" name="category">
-              <option value="">Toutes</option>
-              <option value="Entrée">Entrée</option>
-              <option value="Plat">Plat</option>
-              <option value="Accompagnement">Accompagnement</option>
-              <option value="Sauce">Sauce</option>
-              <option value="Dessert">Dessert</option>
+              <option value="" <?php if ($_POST['category'] == "") { echo "selected"; } ?> >Toutes</option>
+              <option value="Entrée" <?php if ($_POST['category'] == "Entrée") { echo "selected";} ?> >Entrée</option>
+              <option value="Plat" <?php if ($_POST['category'] == "Plat") { echo "selected"; } ?> >Plat</option>
+              <option value="Accompagnement" <?php if ($_POST['category'] == "Accompagnement") { echo "selected"; } ?> >Accompagnement</option>
+              <option value="Sauce" <?php if ($_POST['category'] == "Sauce") { echo "selected"; } ?> >Sauce</option>
+              <option value="Dessert" <?php if ($_POST['category'] == "Dessert") { echo "selected"; } ?> >Dessert</option>
             </select>
           </div>
           <button type="submit">Rechercher</button>

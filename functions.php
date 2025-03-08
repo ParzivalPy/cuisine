@@ -28,11 +28,6 @@ function scrapRecipe(int $num, mysqli $conn): array
         $params[] = '%' . $_POST["titre"] . '%';
         $types .= 's';
     }
-    if (isset($_POST["filtre"]) && $_POST["filtre"] != "") {
-        $sql .= " AND `filtre` LIKE ?";
-        $params[] = '%' . $_POST["filtre"] . '%';
-        $types .= 's';
-    }
     if (isset($_POST["temps"]) && $_POST["temps"] != "") {
         $sql .= " AND `temps` LIKE ?";
         $params[] = '%' . $_POST["temps"] . '%';

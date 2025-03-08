@@ -40,6 +40,7 @@
   border: solid 3px black;
   border-radius: 10px;
   min-width: 250px;
+  padding: 10px 0;
 }
 
 .filters > div {
