@@ -59,7 +59,7 @@ autoConnect();?>
                 <textarea wrap="soft" id="instructions" name="instructions" required><?php echo $recipe['instructions']?></textarea>
             </div>
             <input type="hidden" id="id" name="id" value="<?php echo $recipe['id']?>">
-            <input type="submit" id="submit" value="Ajouter la recette"></input>
+            <input type="submit" id="submit" value="Modifier la recette"></input>
         </form>
     </div>
     <?php else : ?>
