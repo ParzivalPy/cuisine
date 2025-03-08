@@ -30,6 +30,16 @@ input {
   outline: none;
 }
 
+select {
+  font-size: 1em;
+  width: 100%;
+  border: none;
+  border-bottom: 3px solid black;
+  border-radius: 3px;
+  outline: none;
+  background-color: white;
+}
+
 textarea {
   font-size: 1em;
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;

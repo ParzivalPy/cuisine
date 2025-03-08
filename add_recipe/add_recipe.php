@@ -25,6 +25,7 @@ autoConnect();
             <div>
                 <label for="category">Catégorie :</label>
                 <select id="category" name="category" required>
+                    <option value="" disabled selected>Choisissez une catégorie</option>
                     <option value="Entrée">Entrée</option>
                     <option value="Plat">Plat</option>
                     <option value="Accompagnement">Accompagnement</option>
