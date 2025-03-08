@@ -29,6 +29,10 @@ autoConnect();
             </div>
             <div class="caracteristiques">
                 <div class="caracteristique">
+                    <h3>Catégorie</h3>
+                    <p><?= $recipe['category'] ?></p>
+                </div>
+                <div class="caracteristique">
                     <h3>Description</h3>
                     <p><?= $recipe['description'] ?></p>
                 </div>

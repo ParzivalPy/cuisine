@@ -25,11 +25,11 @@ autoConnect();
             <div>
                 <label for="category">Catégorie :</label>
                 <select id="category" name="category" required>
-                    <option value="entree">Entrée</option>
-                    <option value="plat">Plat</option>
-                    <option value="accompagnement">Accompagnement</option>
-                    <option value="sauce">Sauce</option>
-                    <option value="dessert">Dessert</option>
+                    <option value="Entrée">Entrée</option>
+                    <option value="Plat">Plat</option>
+                    <option value="Accompagnement">Accompagnement</option>
+                    <option value="Sauce">Sauce</option>
+                    <option value="Dessert">Dessert</option>
                 </select>
             </div>
             <div>

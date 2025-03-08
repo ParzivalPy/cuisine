@@ -27,11 +27,11 @@ autoConnect();?>
             <div>
                 <label for="category">Catégorie :</label>
                 <select id="category" name="category" required>
-                    <option value="entree">Entrée</option>
-                    <option value="plat">Plat</option>
-                    <option value="accompagnement">Accompagnement</option>
-                    <option value="sauce">Sauce</option>
-                    <option value="dessert">Dessert</option>
+                    <option value="Entrée" <?php if ($recipe['category'] == "Entrée") { echo "selected"; } ?> >Entrée</option>
+                    <option value="Plat" <?php if ($recipe['category'] == "Plat") { echo "selected"; } ?> >Plat</option>
+                    <option value="Accompagnement" <?php if ($recipe['category'] == "Accompagnement") { echo "selected"; } ?> >Accompagnement</option>
+                    <option value="Sauce" <?php if ($recipe['category'] == "Sauce") { echo "selected"; } ?> >Sauce</option>
+                    <option value="Dessert" <?php if ($recipe['category'] == "Dessert") { echo "selected"; } ?> >Dessert</option>
                 </select>
             </div>
             <div>

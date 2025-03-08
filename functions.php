@@ -75,6 +75,7 @@ function pushRecipe(array $postData, mysqli $conn): void
     $people_num = $postData['people_num'];
     $ingredients = $postData['ingredients'];
     $instructions = $postData['instructions'];
+    $category = $postData['category']; // Ajout de la variable category
     $user_id = $_SESSION["LOGGED_USER"]['user_id'];
 
     $title = str_replace("'", "\'", $title);
@@ -100,6 +101,7 @@ function modifyRecipe(array $postData, mysqli $conn): void
     $people_num = $postData['people_num'];
     $ingredients = $postData['ingredients'];
     $instructions = $postData['instructions'];
+    $category = $postData['category']; // Ajout de la variable category
 
     $title = str_replace("'", "\'", $title);
     $desc = str_replace("'", "\'", $desc);
