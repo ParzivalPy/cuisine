@@ -40,8 +40,6 @@
               stroke="#000000" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
           </svg></label>
       </div>
-      <ul class="wrappable">
-      </ul>
       <ul class="menuProfile">
         <li><a href="/contact/contact.php">CONTACT</a></li>
         <li><a href="/login/login.php" style="display:flex;align-items:center;text-transform: uppercase;">

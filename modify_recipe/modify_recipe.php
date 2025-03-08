@@ -25,6 +25,16 @@ autoConnect();?>
                 <input type="text" id="title" name="title" value="<?php echo $recipe['title']?>" autofocus required>
             </div>
             <div>
+                <label for="category">Catégorie :</label>
+                <select id="category" name="category" required>
+                    <option value="entree">Entrée</option>
+                    <option value="plat">Plat</option>
+                    <option value="accompagnement">Accompagnement</option>
+                    <option value="sauce">Sauce</option>
+                    <option value="dessert">Dessert</option>
+                </select>
+            </div>
+            <div>
                 <label for="desc">Description :</label>
                 <textarea wrap="soft" id="desc" name="desc" required><?php echo $recipe['description']?></textarea>
             </div>
