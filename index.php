@@ -27,28 +27,36 @@ autoConnect();
           <h3>Filtres :</h3>
           <div class="filter-titre">
             <label for="titre">Titre :</label>
-            <input type="text" id="titre" name="titre">
+            <input type="text" id="titre" name="titre" value="<?php if (isset($_POST['titre'])) {echo $_POST['titre'];} else { echo '';} ?>">
+            } ?>">
           </div>
           <div class="filter-temps">
-            <label for="temps">Temps :</label>
-            <input type="text" id="temps" name="temps">
+            <label for="temps">Temps de Préparation :</label>
+            <input type="text" id="temps" name="temps" value="<?php if (isset($_POST['temps'])) {echo $_POST['temps'];} else { echo '';} ?>">
+          </div>
+          <div class="filter-temps">
+            <label for="temps2">Temps de Cuisson:</label>
+            <input type="text" id="temps2" name="temps2" value="<?php if (isset($_POST['temps2'])) {echo $_POST['temps2'];} else { echo '';} ?>">
           </div>
           <div class="filter-personnes">
             <label for="personnes">Personnes :</label>
-            <input type="text" id="personnes" name="personnes">
+            <input type="text" id="personnes" name="personnes" value="<?php if (isset($_POST['personnes'])) {echo $_POST['personnes'];} else { echo '';} ?>">
           </div>
           <div class="filtre-type">
             <label for="category">Catégorie :</label>
             <select id="category" name="category">
-              <option value="" <?php if ($_POST['category'] == "") { echo "selected"; } ?> >Toutes</option>
-              <option value="Entrée" <?php if ($_POST['category'] == "Entrée") { echo "selected";} ?> >Entrée</option>
-              <option value="Plat" <?php if ($_POST['category'] == "Plat") { echo "selected"; } ?> >Plat</option>
-              <option value="Accompagnement" <?php if ($_POST['category'] == "Accompagnement") { echo "selected"; } ?> >Accompagnement</option>
-              <option value="Sauce" <?php if ($_POST['category'] == "Sauce") { echo "selected"; } ?> >Sauce</option>
-              <option value="Dessert" <?php if ($_POST['category'] == "Dessert") { echo "selected"; } ?> >Dessert</option>
+              <option value="" <?php if (!isset($_POST['category']) || $_POST['category'] == '') {echo 'Tout';} else { echo 'selected';} ?>>Toutes</option>
+              <option value="Entrée" <?php if (isset($_POST['category']) && $_POST['category'] == 'Entrée') {echo 'Entrée';} else { echo 'selected';} ?>>Entrée</option>
+              <option value="Plat" <?php if (isset($_POST['category']) && $_POST['category'] == 'Plat') {echo 'Plat';} else { echo 'selected';} ?>>Plat</option>
+              <option value="Accompagnement" <?php if (isset($_POST['category']) && $_POST['category'] == 'Accompagnement') {echo 'selected';} else { echo '';} ?>>Accompagnement</option>
+              <option value="Sauce" <?php if (isset($_POST['category']) && $_POST['category'] == 'Sauce') {echo 'Sauce';} else { echo 'selected';} ?>>Sauce</option>
+              <option value="Dessert" <?php if (isset($_POST['category']) && $_POST['category'] == 'Dessert') {echo 'Dessert';} else { echo 'selected';} ?>>Dessert</option>
             </select>
           </div>
-          <button type="submit">Rechercher</button>
+          <div class="final">
+            <input type="reset" value="Réinitialiser">
+            <input type="submit" value="Filtrer">
+          </div>
         </form>
         <div class="recettes">
           <?php

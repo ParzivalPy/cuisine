@@ -75,6 +75,23 @@
   background-color: white;
 }
 
+.final {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  gap: 10px;
+  justify-content: center;
+  align-items: center;
+  margin-top: 20px;
+}
+
+.final input {
+  background-color: white;
+  border: 3px solid black;
+  color: black;
+  cursor: pointer;
+}
+
 .recettes {
   display: flex;
   flex: 3;
