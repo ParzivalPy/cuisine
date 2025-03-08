@@ -16,6 +16,11 @@ form {
   color: red;
 }
 
+
+form > div {
+  margin-bottom: 20px;
+}
+
 input {
   font-size: 1em;
   width: 100%;

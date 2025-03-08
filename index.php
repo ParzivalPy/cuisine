@@ -22,42 +22,71 @@ autoConnect();
       <div class="title">
         <h2>Recettes</h2>
       </div>
-      <div class="recettes">
-        <?php
-        $conn = connectToDb();
-        $recipes = scrapRecipe(6, $conn);
-        foreach ($recipes as $recipe):
-          ?>
-          <div class="recette">
-            <a href="recipe/recipe.php?id=<?= $recipe['id'] ?>" style="gap:30px">
-              <div class="recetteInfo">
-                <h3 style="text-transform: capitalize;"><?= $recipe['title'] ?></h3>
-              </div>
-              <div class="recipe_informations">
-                <div class="recipe_prep_time info">
-                  <p><b>Temps de préparation :</b>
-                    <br>
-                    <?php echo $recipe['prep_time'] ?> minutes
-                  </p>
-                </div>
-                <div class="recipe_baking_time info">
-                  <p><b>Temps de cuisson :</b>
-                    <br>
-                    <?php echo $recipe['baking_time'] ?> minutes
-                  </p>
-                </div>
-                <div class="recipe_people_num info">
-                  <p><b>Nombre de personnes :</b>
-                    <br>
-                    <?php echo $recipe['people_num'] ?> personnes
-                  </p>
-                </div>
-              </div>
-            </a>
+      <div class="page-content">
+        <div class="filters">
+          <b>Filtres</b>
+          <div class="filter-title">
+            <label for="titre">Titre</label><br>
+            <input type="text" id="titre" name="titre" placeholder="Rechercher par titre" />
           </div>
+          <div class="filter-type">
+            <label for="filtre">Type de recette</label><br>
+            <select name="filtre" id="filtre">
+              <option value="all">Tout</option>
+              <option value="entree">Entrée</option>
+              <option value="plat">Plat</option>
+              <option value="accompagnement">Accompagnement</option>
+              <option value="sauce">Sauce</option>
+              <option value="dessert">Dessert</option>
+            </select>
+          </div>
+          <div class="filter-time">
+            <label for="temps">Temps de préparation</label><br>
+            <input type="number" id="temps" name="temps" placeholder="Temps de préparation" />
+          </div>
+          <div class="filter-person">
+            <label for="personnes">Nombre de personnes</label><br>
+            <input type="number" id="personnes" name="personnes" placeholder="Nombre de personnes" />
+          </div>
+          <button id="filter">Filtrer</button>
+        </div>
+        <div class="recettes">
           <?php
-        endforeach;
-        ?>
+          $conn = connectToDb();
+          $recipes = scrapRecipe(6, $conn);
+          foreach ($recipes as $recipe):
+            ?>
+            <div class="recette">
+              <a href="recipe/recipe.php?id=<?= $recipe['id'] ?>" style="gap:30px">
+                <div class="recetteInfo">
+                  <h3 style="text-transform: capitalize;"><?= $recipe['title'] ?></h3>
+                </div>
+                <div class="recipe_informations">
+                  <div class="recipe_prep_time info">
+                    <p><b>Temps de préparation :</b>
+                      <br>
+                      <?php echo $recipe['prep_time'] ?> minutes
+                    </p>
+                  </div>
+                  <div class="recipe_baking_time info">
+                    <p><b>Temps de cuisson :</b>
+                      <br>
+                      <?php echo $recipe['baking_time'] ?> minutes
+                    </p>
+                  </div>
+                  <div class="recipe_people_num info">
+                    <p><b>Nombre de personnes :</b>
+                      <br>
+                      <?php echo $recipe['people_num'] ?> personnes
+                    </p>
+                  </div>
+                </div>
+              </a>
+            </div>
+            <?php
+          endforeach;
+          ?>
+        </div>
       </div>
     </div>
     <?php if (isset($_SESSION['LOGGED_USER'])): ?>

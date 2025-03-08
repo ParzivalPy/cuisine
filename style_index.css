@@ -19,14 +19,36 @@
   margin-top: 50px;
 }
 
+.page-content {
+  display: flex;
+  flex-direction: row !important;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: flex-start;
+  width: 80%;
+  margin-top: 30px;
+  gap: 20px;
+}
+
+.filters {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  border: solid 3px black;
+  border-radius: 10px;
+  min-width: 210px;
+}
+
 .recettes {
   display: flex;
-  align-items: center;
+  flex: 3;
+  align-items: flex-start;
   flex-direction: column;
   flex-wrap: wrap;
-  margin-top: 50px;
-  width: 80%;
-
+  min-width: 210px;
 }
 
 .recette {
