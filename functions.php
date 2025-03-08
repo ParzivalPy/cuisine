@@ -19,8 +19,46 @@ function connectToDb(): mysqli
 
 function scrapRecipe(int $num, mysqli $conn): array
 {
-    $sql = "SELECT * FROM `recettes`";
-    $result = mysqli_query($conn, $sql);
+    $sql = "SELECT * FROM `recettes` WHERE 1=1";
+    $params = [];
+    $types = '';
+
+    if (isset($_POST["titre"]) && $_POST["titre"] != "") {
+        $sql .= " AND `title` LIKE ?";
+        $params[] = '%' . $_POST["titre"] . '%';
+        $types .= 's';
+    }
+    if (isset($_POST["filtre"]) && $_POST["filtre"] != "") {
+        $sql .= " AND `filtre` LIKE ?";
+        $params[] = '%' . $_POST["filtre"] . '%';
+        $types .= 's';
+    }
+    if (isset($_POST["temps"]) && $_POST["temps"] != "") {
+        $sql .= " AND `temps` LIKE ?";
+        $params[] = '%' . $_POST["temps"] . '%';
+        $types .= 's';
+    }
+    if (isset($_POST["personnes"]) && $_POST["personnes"] != "") {
+        $sql .= " AND `personnes` LIKE ?";
+        $params[] = '%' . $_POST["personnes"] . '%';
+        $types .= 's';
+    }
+    if (isset($_POST["category"]) && $_POST["category"] != "") {
+        $sql .= " AND `category` = ?";
+        $params[] = $_POST["category"];
+        $types .= 's';
+    }
+
+    $stmt = mysqli_prepare($conn, $sql);
+    if ($params) {
+        mysqli_stmt_bind_param($stmt, $types, ...$params);
+    }
+    mysqli_stmt_execute($stmt);
+    $result = mysqli_stmt_get_result($stmt);
+
+    if (!$result) {
+        die("Erreur lors de l'exécution de la requête : " . mysqli_error($conn));
+    }
 
     $recipes = [];
     $count = 0;
@@ -34,7 +72,7 @@ function scrapRecipe(int $num, mysqli $conn): array
     }
 
     return $recipes;
-} 
+}
 
 function getRecipeById(int $id, mysqli $conn): array
 {

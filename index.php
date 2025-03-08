@@ -23,37 +23,37 @@ autoConnect();
         <h2>Recettes</h2>
       </div>
       <div class="page-content">
-        <div class="filters">
-          <b>Filtres</b>
-          <div class="filter-title">
-            <label for="titre">Titre</label><br>
-            <input type="text" id="titre" name="titre" placeholder="Rechercher par titre" />
+        <form action="index.php" method="post" class="filters">
+          <h3>Filtres :</h3>
+          <div class="filter-titre">
+            <label for="titre">Titre :</label>
+            <input type="text" id="titre" name="titre">
           </div>
-          <div class="filter-type">
-            <label for="filtre">Type de recette</label><br>
-            <select name="filtre" id="filtre">
-              <option value="all">Tout</option>
-              <option value="entree">Entrée</option>
-              <option value="plat">Plat</option>
-              <option value="accompagnement">Accompagnement</option>
-              <option value="sauce">Sauce</option>
-              <option value="dessert">Dessert</option>
+          <div class="filter-temps">
+            <label for="temps">Temps :</label>
+            <input type="text" id="temps" name="temps">
+          </div>
+          <div class="filter-personnes">
+            <label for="personnes">Personnes :</label>
+            <input type="text" id="personnes" name="personnes">
+          </div>
+          <div class="filtre-type">
+            <label for="category">Catégorie :</label>
+            <select id="category" name="category">
+              <option value="">Toutes</option>
+              <option value="Entrée">Entrée</option>
+              <option value="Plat">Plat</option>
+              <option value="Accompagnement">Accompagnement</option>
+              <option value="Sauce">Sauce</option>
+              <option value="Dessert">Dessert</option>
             </select>
           </div>
-          <div class="filter-time">
-            <label for="temps">Temps de préparation</label><br>
-            <input type="number" id="temps" name="temps" placeholder="Temps de préparation" />
-          </div>
-          <div class="filter-person">
-            <label for="personnes">Nombre de personnes</label><br>
-            <input type="number" id="personnes" name="personnes" placeholder="Nombre de personnes" />
-          </div>
-          <button id="filter">Filtrer</button>
-        </div>
+          <button type="submit">Rechercher</button>
+        </form>
         <div class="recettes">
           <?php
           $conn = connectToDb();
-          $recipes = scrapRecipe(6, $conn);
+          $recipes = scrapRecipe(10, $conn);
           foreach ($recipes as $recipe):
             ?>
             <div class="recette">
