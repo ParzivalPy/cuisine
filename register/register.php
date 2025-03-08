@@ -17,7 +17,7 @@ autoConnect();?>
     <div class="page">
         <form method="POST" action="submit_register.php">
             <?php if (isset($_SESSION['REGISTER_ERROR_MESSAGE'])): ?>
-                <div class="alert alert-danger" role="alert">
+                <div class="alert alert-danger alert-box" role="alert">
                     <?php echo $_SESSION['REGISTER_ERROR_MESSAGE'];
                     unset($_SESSION['REGISTER_ERROR_MESSAGE']); ?>
                 </div>
@@ -48,7 +48,7 @@ autoConnect();?>
                 <label for="password" class="form-label">Mot de passe</label>
                 <input required type="password" class="form-control" id="password" name="password">
             </div>
-            <input type="submit" id="submit">
+            <input type="submit" id="submit" value="S'inscrire">
         </form>
         <script src="../script.js"></script>
     </div>

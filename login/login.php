@@ -19,7 +19,7 @@ autoConnect();?>
             <form action="submit_login.php" method="POST">
                 <!-- si message d'erreur on l'affiche -->
                 <?php if (isset($_SESSION['LOGIN_ERROR_MESSAGE'])): ?>
-                    <div class="alert alert-danger" role="alert">
+                    <div class="alert alert-danger alert-box" role="alert">
                         <?php echo $_SESSION['LOGIN_ERROR_MESSAGE'];
                         unset($_SESSION['LOGIN_ERROR_MESSAGE']); ?>
                     </div>
@@ -40,7 +40,7 @@ autoConnect();?>
                     <br>
                     <b>Les inscriptions sont désactivées pour le moment.</b>
                 </p>
-                <input type="submit" id="submit">
+                <input type="submit" id="submit" value="Se connecter">
             </form>
         <?php else: ?>
             <div class="corps">
