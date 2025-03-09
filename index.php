@@ -23,7 +23,7 @@ autoConnect();
         <h2>Recettes</h2>
       </div>
       <div class="page-content">
-        <form action="index.php" method="post" class="filters">
+        <form action="index.php" method="post" class="filters" id="filters">
           <h3>Filtres :</h3>
           <div class="filter-titre">
             <label for="titre">Titre :</label>
@@ -53,7 +53,7 @@ autoConnect();
             </select>
           </div>
           <div class="final">
-            <input type="reset" value="Réinitialiser">
+            <input type="button" onclick="resetFilter()" value="Réinitialiser" id="filtre-reset">
             <input type="submit" value="Filtrer">
           </div>
         </form>

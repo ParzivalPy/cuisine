@@ -1,3 +1,5 @@
+// Ouverture du menu pour mobile
+
 let checkbox = document.getElementById("menu-check");
 
 checkbox.addEventListener("change", function () {
@@ -18,6 +20,8 @@ checkbox.addEventListener("change", function () {
   }
 });
 
+// Formulaire de contact, message de confirmation
+
 function confirmMessage() {
   let email = document.getElementById("mail");
   let subject = document.getElementById("subject");
@@ -34,6 +38,15 @@ function confirmMessage() {
   }
 }
 
+// Fonction de redirection
+
 function redirectTo(url) {
   window.location.href = url;
+}
+
+//Fonction de réinitialisation du formulaire de filtre
+
+function resetFilter() {
+  document.getElementById('filters').reset();
+  redirectTo("index.php");
 }
