@@ -3,12 +3,18 @@ let checkbox = document.getElementById("menu-check");
 checkbox.addEventListener("change", function () {
   divMenu = document.getElementById("menuParent");
   classic = document.getElementById("classicMenu");
+  html = document.getElementsByTagName("html")[0];
+  add_recipe = document.getElementById("add_recipe");
   if (this.checked) {
     divMenu.setAttribute("style", "display: flex;");
     classic.setAttribute("style", "display: none;");
+    html.setAttribute("style", "overflow: hidden;");
+    add_recipe.setAttribute("style", "display: none;");
   } else {
     divMenu.setAttribute("style", "display: none;");
     classic.setAttribute("style", "display: flex;");
+    html.setAttribute("style", "overflow: auto;");
+    add_recipe.setAttribute("style", "display: flex;");
   }
 });
 

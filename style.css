@@ -69,7 +69,7 @@ header button {
 .menuProfile {
   position: sticky;
   width: 100%;
-  height: 100vh;
+  height: 100lvh;
   margin: auto;
   margin-bottom: 0px;
   animation: expand 0.5s forwards;
