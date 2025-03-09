@@ -16,6 +16,10 @@ autoConnect();
 
 <body>
     <?php require_once("../header.php"); ?>
+    <?php if (!isset($_SESSION["LOGGED_USER"])) {
+        header("Location: ../login/login.php");
+        exit;
+    } ?>
     <div class="page">
         <form action="submit_add_recipe.php" method="POST">
             <div>
