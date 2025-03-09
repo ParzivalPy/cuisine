@@ -35,6 +35,8 @@ if (isset($postData['email']) && isset($postData['password']) && isset($postData
         header('Location: ../register/register.php');
         exit;
     } else {
+        // Hashage du mot de passe
+        $password = password_hash($password, PASSWORD_DEFAULT, ['cost' => 12]);
         // Insertion du nouvel utilisateur
         $sql = "INSERT INTO `profils`(`last_name`, `first_name`, `pseudo`, `email`, `password`) VALUES ('$last_name','$first_name','$pseudo','$email','$password')";
 

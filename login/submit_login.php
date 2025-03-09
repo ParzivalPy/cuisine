@@ -28,7 +28,7 @@ if (isset($postData['email']) && isset($postData['password'])) {
                 $user = mysqli_fetch_assoc($result);
 
                 // Vérification du mot de passe
-                if ($user['password'] === $password) {
+                if (password_verify($password, $user['password']) == true) {
                     $_SESSION['LOGGED_USER'] = [
                         'last_name' => $user['last_name'],
                         'first_name' => $user['first_name'],
