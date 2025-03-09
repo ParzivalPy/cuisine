@@ -16,10 +16,18 @@ autoConnect();
 
 <body>
     <?php require_once("../header.php"); ?>
-    <?php if (!isset($_SESSION["LOGGED_USER"])) {
-        header("Location: ../login/login.php");
-        exit;
-    } ?>
+    <?php if (!isset($_SESSION["LOGGED_USER"])): ?>
+        <div class="alert-container" style="width: 50%; margin: 50px 25%;">
+            <div class="alert dialog-box">
+                <p>Vous n'avez pas la permission d'être ici<br>Vous serez redirigés dans 3 secondes...</p>
+            </div>
+        </div>
+        <script>
+            setTimeout(() => {
+                window.location.href = "../login/login.php";
+            }, 3000);
+        </script>
+    <?php else: ?>
     <div class="page">
         <form action="submit_add_recipe.php" method="POST">
             <div>
@@ -64,6 +72,7 @@ autoConnect();
             <input type="submit" id="submit" value="Ajouter la recette"></input>
         </form>
     </div>
+    <?php endif; ?>
     <script>
         document.addEventListener('DOMContentLoaded', function () {
             var textareas = document.querySelectorAll('textarea');

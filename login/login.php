@@ -19,7 +19,7 @@ autoConnect();?>
             <form action="submit_login.php" method="POST">
                 <!-- si message d'erreur on l'affiche -->
                 <?php if (isset($_SESSION['LOGIN_ERROR_MESSAGE'])): ?>
-                    <div class="alert alert-danger alert-box" role="alert">
+                    <div class="alert dialog-box" role="alert">
                         <?php echo $_SESSION['LOGIN_ERROR_MESSAGE'];
                         unset($_SESSION['LOGIN_ERROR_MESSAGE']); ?>
                     </div>

@@ -17,7 +17,7 @@ autoConnect();?>
     <div class="page">
         <form method="POST" action="submit_register.php">
             <?php if (isset($_SESSION['REGISTER_ERROR_MESSAGE'])): ?>
-                <div class="alert alert-danger alert-box" role="alert">
+                <div class="alert dialog-box" role="alert">
                     <?php echo $_SESSION['REGISTER_ERROR_MESSAGE'];
                     unset($_SESSION['REGISTER_ERROR_MESSAGE']); ?>
                 </div>
