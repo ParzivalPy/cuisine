@@ -57,6 +57,4 @@ if (isset($postData['email']) && isset($postData['password']) && isset($postData
         header('Location: ../register/register.php');
         exit;
 }
-
-exit();
 ?>
